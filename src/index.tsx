@@ -18,10 +18,11 @@ class AppState {
 }
 
 @observer
-class TimerView extends React.Component<{appState: AppState}, {}> {
+class AppRoot extends React.Component<{appState: AppState}, {}> {
     render() {
         return (
             <div>
+                <h1>Hello World</h1>
                 <button onClick={this.onReset}>
                     Seconds passed: {this.props.appState.timer}
                 </button>
@@ -35,4 +36,4 @@ class TimerView extends React.Component<{appState: AppState}, {}> {
 };
 
 const appState = new AppState();
-ReactDOM.render(<TimerView appState={appState} />, document.getElementById('root'));
+ReactDOM.render(<AppRoot appState={appState} />, document.getElementById('root'));
